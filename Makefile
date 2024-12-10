@@ -5,7 +5,7 @@ LDFLAGS +=
 all: $(EXEC)
 
 $(EXEC): accelerometer_app.c
-	$(CC) $< $(CFLAGS) -o $(EXEC) 
+	$(CC) $< $(LDFLAGS) $(CFLAGS) -o $(EXEC) 
 
 clean:
 	rm -f $(EXEC) *.o
