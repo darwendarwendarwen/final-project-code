@@ -47,8 +47,8 @@ int main() {
         return 1;
     }
 
-    // Read axis data 
-    for (int i = 0; i < 50; i++) {
+    // Read axis data - Runs for 20 seconds
+    for (int i = 0; i < 200; i++) {
         // read data from all axes starting from X_REG
         buf[0] = X_REG;
         if (write(fd, buf, 1) != 1 || read(fd, buf, 6) != 6) {
@@ -64,7 +64,7 @@ int main() {
         int16_t z = (int16_t)(buf[5] << 8 | buf[4]);
         printf("X = %d,  Y = %d, Z = %d\n", x, y, z);
 
-        usleep(100*1000); // Delay 200 ms
+        usleep(100*1000); // Delay 100 ms
     }
 
     printf("Completed\n");
