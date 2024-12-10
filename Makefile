@@ -1,5 +1,6 @@
 EXEC=accelerometer_app
 CFLAGS = -Wall -O2
+LDFLAGS +=
 
 all: $(EXEC)
 
